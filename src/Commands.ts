@@ -4,8 +4,8 @@ import {
   Client,
 } from "discord.js";
 
-import { Hello } from "./commands/hello";
-import { Image } from "./commands/image";
+import { Hello } from "./commands/hello.ts";
+import { Image } from "./commands/image.ts";
 
 export interface Command extends ChatInputApplicationCommandData {
   run: (client: Client, interaction: CommandInteraction) => void;

@@ -1,6 +1,6 @@
 import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
-import interactionCreate from "./listeners/interactionCreate";
-import ready from "./listeners/ready";
+import interactionCreate from "./listeners/interactionCreate.ts";
+import ready from "./listeners/ready.ts";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
