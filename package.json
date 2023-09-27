@@ -2,6 +2,9 @@
   "name": "cigcord",
   "module": "bot.ts",
   "type": "module",
+  "scripts": {
+    "bot": "bun run src/bot.ts"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
