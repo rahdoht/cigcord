@@ -3,7 +3,8 @@
   "module": "bot.ts",
   "type": "module",
   "scripts": {
-    "bot": "bun run src/bot.ts"
+    "bot": "ts-node --esm src/bot.ts",
+    "render": "ts-node --esm src/lib/render.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
@@ -12,6 +13,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "discord.js": "^14.13.0"
+    "canvas": "^2.11.2",
+    "discord.js": "^14.13.0",
+    "ts-node": "^10.9.1"
   }
 }

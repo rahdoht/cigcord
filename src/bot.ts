@@ -2,9 +2,17 @@ import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
 import interactionCreate from "./listeners/interactionCreate.ts";
 import ready from "./listeners/ready.ts";
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// Custom client to handle commands property
+class CustomClient extends Client {
+  commands: Collection<string, any>;
 
-client.commands = new Collection();
+  constructor() {
+    super({ intents: [GatewayIntentBits.Guilds] });
+    this.commands = new Collection<string, any>();
+  }
+}
+
+const client = new CustomClient();
 
 client.once(Events.ClientReady, (c) => {
   console.log(`Ready! Logged in as ${c.user.tag}`);

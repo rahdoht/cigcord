@@ -170,3 +170,6 @@ dist
 
 # IntelliJ based IDEs
 .idea
+
+# Project specific files
+pack.png

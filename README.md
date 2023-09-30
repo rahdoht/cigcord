@@ -1,15 +1,21 @@
 # cigcord
 
-To install dependencies:
+The canvas library does not play well with bun yet, so to install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
 To run:
 
 ```bash
 bun bot
+```
+
+To render:
+
+```bash
+bun render
 ```
 
 This project was created using `bun init` in bun v1.0.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
