@@ -1,7 +1,9 @@
 import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
+import dotenv from "dotenv";
 import interactionCreate from "./listeners/interactionCreate.ts";
 import ready from "./listeners/ready.ts";
-import express from "express";
+
+dotenv.config();
 
 // Custom client to handle commands property
 class CustomClient extends Client {
@@ -13,25 +15,19 @@ class CustomClient extends Client {
   }
 }
 
-// Create an Express server to listen on the specified port
-const app = express();
-const port = process.env.PORT || 3000;
+export async function startBot() {
+  try {
+    const client = new CustomClient();
 
-app.get("/", (req: any, res: { send: (arg0: string) => void }) => {
-  res.send("render discord amongst the masses");
-});
+    client.once(Events.ClientReady, (c) => {
+      console.log(`Ready! Logged in as ${c.user.tag}`);
+    });
 
-app.listen(port, () => {
-  console.log(`Listening on ${port}`);
+    ready(client);
+    interactionCreate(client);
 
-  const client = new CustomClient();
-
-  client.once(Events.ClientReady, (c) => {
-    console.log(`Ready! Logged in as ${c.user.tag}`);
-  });
-
-  ready(client);
-  interactionCreate(client);
-
-  client.login(process.env.DISCORD_TOKEN);
-});
+    client.login(process.env.DISCORD_TOKEN);
+  } catch (error) {
+    console.error("Error while running the bot: ", error);
+  }
+}
