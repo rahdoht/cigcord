@@ -9,13 +9,13 @@ npm install
 To run:
 
 ```bash
-bun bot
+npm run bot
 ```
 
 To render:
 
 ```bash
-bun render
+npm run render
 ```
 
 This project was created using `bun init` in bun v1.0.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

@@ -3,7 +3,7 @@
   "module": "bot.ts",
   "type": "module",
   "scripts": {
-    "bot": "ts-node --esm src/bot.ts",
+    "start": "ts-node --esm src/bot.ts",
     "render": "ts-node --esm src/lib/render.ts"
   },
   "devDependencies": {
