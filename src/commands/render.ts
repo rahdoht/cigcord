@@ -5,6 +5,7 @@ import {
 } from "discord.js";
 import { Command } from "../Commands.ts";
 import { renderPack } from "../lib/render.ts";
+import { insertRecord } from "../lib/supabase.ts";
 
 export const Render: Command = {
   name: "render",
@@ -22,10 +23,22 @@ export const Render: Command = {
     const label: string =
       interaction.options.get("text")?.value?.toString() ??
       "you misplaced something";
-    const pack = await renderPack(label, null);
+    const metadata = {
+      globalName: interaction.user.globalName,
+      displayName: interaction.user.displayName,
+    };
 
-    await interaction.followUp({
-      files: [pack],
-    });
+    try {
+      const { cigNumber, path } = await renderPack(label, null);
+      console.log(`rendered "${label}" on ${cigNumber}`);
+
+      insertRecord(label, cigNumber, JSON.stringify(metadata), "cigcord");
+
+      await interaction.followUp({
+        files: [path],
+      });
+    } catch (error) {
+      console.error(`failed to render ${label}: ${JSON.stringify(error)}`);
+    }
   },
 };

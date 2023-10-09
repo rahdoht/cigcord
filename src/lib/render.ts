@@ -42,11 +42,14 @@ function breakLines(
   return allLines;
 }
 
-export async function renderPack(label: string, cigNumber: string | null) {
+export async function renderPack(
+  label: string,
+  cigNumber: number | null
+): Promise<{ cigNumber: number; path: string }> {
   if (cigNumber === null) {
-    cigNumber = blanks[Math.floor(Math.random() * blanks.length)].toString();
+    cigNumber = blanks[Math.floor(Math.random() * blanks.length)];
   }
-  let imageUrl = `${IPFS_BASE}/${cigNumber}.jpg`;
+  let imageUrl = `${IPFS_BASE}/${cigNumber?.toString()}.jpg`;
 
   const canvas = createCanvas(IMAGE_WIDTH, IMAGE_HEIGHT);
   const ctx: CanvasRenderingContext2D = canvas.getContext("2d");
@@ -104,7 +107,8 @@ export async function renderPack(label: string, cigNumber: string | null) {
   const buffer = canvas.toBuffer("image/png");
   const outputPath = "assets/pack.png";
   fs.writeFileSync(outputPath, buffer);
-  return outputPath;
+
+  return { cigNumber: cigNumber, path: outputPath };
 }
 
 // Example usage
