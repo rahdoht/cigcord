@@ -24,7 +24,7 @@ export const Render: Command = {
       interaction.options.get("text")?.value?.toString() ??
       "you misplaced something";
     const metadata = {
-      globalName: interaction.user.globalName,
+      username: interaction.user.username,
       displayName: interaction.user.displayName,
     };
 
