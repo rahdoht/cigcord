@@ -26,6 +26,7 @@ export const Render: Command = {
     const metadata = {
       username: interaction.user.username,
       displayName: interaction.user.displayName,
+      server: interaction.guild?.name,
     };
 
     try {
