@@ -14,7 +14,7 @@ const TEXT_Y = 1500;
 const LABEL_WIDTH = 480;
 const LABEL_HEIGHT = 225;
 const IPFS_BASE =
-  "https://bafybeigvhgkcqqamlukxcmjodalpk2kuy5qzqtx6m4i6pvb7o3ammss3y4.ipfs.dweb.link";
+  "https://bafybeigvhgkcqqamlukxcmjodalpk2kuy5qzqtx6m4i6pvb7o3ammss3y4.ipfs.cf-ipfs.com";
 
 function breakLines(
   ctx: CanvasRenderingContext2D,
