@@ -1,5 +1,5 @@
 import express from "express";
-// import { startBot } from "./bot.ts";
+import { startBot } from "./cigcord/bot.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
