@@ -1,7 +1,6 @@
 import express from "express";
-import { startBot } from "./bot.ts";
+import { startBot } from "./bot";
 
-// Create an Express server to listen on the specified port
 const app = express();
 const port = process.env.PORT || 3000;
 

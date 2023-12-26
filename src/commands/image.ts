@@ -1,5 +1,5 @@
 import { CommandInteraction, Client } from "discord.js";
-import { Command } from "../Commands.ts";
+import { Command } from "../Commands";
 
 export const Image: Command = {
   name: "img",

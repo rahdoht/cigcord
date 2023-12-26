@@ -3,9 +3,9 @@ import {
   Client,
   ApplicationCommandOptionType,
 } from "discord.js";
-import { Command } from "../Commands.ts";
-import { renderPack } from "../lib/render.ts";
-import { insertRecord } from "../lib/supabase.ts";
+import { Command } from "../Commands";
+import { renderPack } from "../lib/render";
+import { insertRecord } from "../lib/supabase";
 
 export const Render: Command = {
   name: "render",

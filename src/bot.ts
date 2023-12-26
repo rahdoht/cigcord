@@ -1,7 +1,7 @@
 import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import interactionCreate from "./listeners/interactionCreate.ts";
-import ready from "./listeners/ready.ts";
+import interactionCreate from "./listeners/interactionCreate";
+import ready from "./listeners/ready";
 
 dotenv.config();
 

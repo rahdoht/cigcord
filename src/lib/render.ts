@@ -4,7 +4,7 @@ import {
   DOMMatrix,
   CanvasRenderingContext2D,
 } from "canvas";
-import blanks from "./blanks.json" assert { type: "json" };
+import blanks from "./blanks.json"; //assert { type: "json" };
 import * as fs from "fs";
 
 const IMAGE_WIDTH = 1728;
@@ -112,7 +112,7 @@ export async function renderPack(
 }
 
 // Example usage
-const label = "yet another image of a thing";
-const cigNumber = null;
-const outputPath = await renderPack(label, cigNumber);
-console.log(`pack has been saved to ${outputPath}`);
+// const label = "yet another image of a thing";
+// const cigNumber = null;
+// const outputPath = await renderPack(label, cigNumber);
+// console.log(`pack has been saved to ${outputPath}`);

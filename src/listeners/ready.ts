@@ -1,5 +1,5 @@
 import { Client } from "discord.js";
-import { Commands } from "../Commands.ts";
+import { Commands } from "../Commands";
 
 export default (client: Client): void => {
   client.on("ready", async () => {

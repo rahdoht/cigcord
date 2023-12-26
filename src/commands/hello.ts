@@ -3,7 +3,7 @@ import {
   Client,
   ApplicationCommandOptionType,
 } from "discord.js";
-import { Command } from "../Commands.ts";
+import { Command } from "../Commands";
 
 export const Hello: Command = {
   name: "hello",
