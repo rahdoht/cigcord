@@ -19,7 +19,8 @@
     "resolveJsonModule": true,
     "types": [
       "bun-types" // add Bun global
-    ]
+    ],
+    "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "src/**/*.json"]
+  "include": ["src/**/*.ts", "src/**/*.json", "src/**/*.js"]
 }
